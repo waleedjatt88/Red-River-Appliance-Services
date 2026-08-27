@@ -5,6 +5,7 @@ import AboutServices from './components/AboutServices';
 import Specializations from './components/Specializations';
 import ServiceFeatures from './components/ServiceFeatures';
 import EasyProcess from './components/EasyProcess';
+import BrandsSection from './components/BrandsSection';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
       <Specializations />
       <ServiceFeatures />
       <EasyProcess />
+      <BrandsSection />
     </div>
   );
 }
