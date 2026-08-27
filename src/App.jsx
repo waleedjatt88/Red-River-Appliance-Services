@@ -10,6 +10,7 @@ import Testimonials from './components/Testimonials';
 import CoverageArea from './components/CoverageArea';
 import FaqSection from './components/FaqSection';
 import ContactSection from './components/ContactSection';
+import CtaBanner from './components/CtaBanner';
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
       <CoverageArea />
       <FaqSection />
       <ContactSection />
+      <CtaBanner />
     </div>
   );
 }
