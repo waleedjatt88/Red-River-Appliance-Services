@@ -4,6 +4,7 @@ import WhyChooseUs from './components/WhyChooseUs';
 import AboutServices from './components/AboutServices';
 import Specializations from './components/Specializations';
 import ServiceFeatures from './components/ServiceFeatures';
+import EasyProcess from './components/EasyProcess';
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <AboutServices />
       <Specializations />
       <ServiceFeatures />
+      <EasyProcess />
     </div>
   );
 }
