@@ -7,6 +7,7 @@ import ServiceFeatures from './components/ServiceFeatures';
 import EasyProcess from './components/EasyProcess';
 import BrandsSection from './components/BrandsSection';
 import Testimonials from './components/Testimonials';
+import CoverageArea from './components/CoverageArea';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
       <EasyProcess />
       <BrandsSection />
       <Testimonials />
+      <CoverageArea />
     </div>
   );
 }
