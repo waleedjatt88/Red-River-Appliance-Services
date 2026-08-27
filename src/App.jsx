@@ -9,6 +9,7 @@ import BrandsSection from './components/BrandsSection';
 import Testimonials from './components/Testimonials';
 import CoverageArea from './components/CoverageArea';
 import FaqSection from './components/FaqSection';
+import ContactSection from './components/ContactSection';
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
       <Testimonials />
       <CoverageArea />
       <FaqSection />
+      <ContactSection />
     </div>
   );
 }
