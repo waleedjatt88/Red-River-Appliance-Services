@@ -11,10 +11,11 @@ import CoverageArea from './components/CoverageArea';
 import FaqSection from './components/FaqSection';
 import ContactSection from './components/ContactSection';
 import CtaBanner from './components/CtaBanner';
+import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <div className="w-full min-h-screen bg-[#fafafa]">
+    <div className="w-full min-h-screen bg-[#fafafa] flex flex-col">
       <HeroAndNavbar />
       <WhyChooseUs />
       <AboutServices />
@@ -27,6 +28,7 @@ export default function App() {
       <FaqSection />
       <ContactSection />
       <CtaBanner />
+      <Footer />
     </div>
   );
 }
