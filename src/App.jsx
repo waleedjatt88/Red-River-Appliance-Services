@@ -2,6 +2,8 @@ import React from 'react';
 import HeroAndNavbar from './components/HeroAndNavbar';
 import WhyChooseUs from './components/WhyChooseUs';
 import AboutServices from './components/AboutServices';
+import Specializations from './components/Specializations';
+import ServiceFeatures from './components/ServiceFeatures';
 
 export default function App() {
   return (
@@ -9,6 +11,8 @@ export default function App() {
       <HeroAndNavbar />
       <WhyChooseUs />
       <AboutServices />
+      <Specializations />
+      <ServiceFeatures />
     </div>
   );
 }
