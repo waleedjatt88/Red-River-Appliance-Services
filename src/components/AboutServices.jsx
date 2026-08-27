@@ -6,14 +6,14 @@ import { Tag, ShieldCheck, Phone, ArrowRight, ExternalLink } from 'lucide-react'
 export default function AboutServices() {
   return (
     <section 
-      className="relative w-full py-16 lg:py-28 overflow-hidden select-none"
+      className="relative w-full py-20 lg:py-28 overflow-hidden select-none"
       style={{
-        background: 'linear-gradient(135deg, rgba(211, 24, 32, 0.10) 0%, #FFFFFF 45%, rgba(211, 24, 32, 0.20) 100%)'
+        background: 'linear-gradient(135deg, rgba(211, 24, 32, 0.08) 0%, #FFFFFF 50%, rgba(211, 24, 32, 0.20) 100%)'
       }}
     >
-      {/* Ambient background soft light circles */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-[rgba(211,24,32,0.08)] rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[rgba(211,24,32,0.15)] rounded-full blur-3xl pointer-events-none -z-10" />
+      {/* Background Soft Ambient Accents */}
+      <div className="absolute top-1/4 -left-20 w-[450px] h-[450px] bg-[rgba(211,24,32,0.06)] rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[rgba(211,24,32,0.18)] rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -23,7 +23,7 @@ export default function AboutServices() {
             
             {/* Top Small Badge */}
             <div className="inline-flex items-center gap-2 bg-white px-3.5 py-1.5 rounded-full border border-gray-200/80 shadow-[0_2px_10px_rgba(0,0,0,0.04)]">
-              <span className="text-[#e51e25] text-xs font-bold">✦</span>
+              <span className="text-[#D31820] text-xs font-bold">✦</span>
               <span className="text-[10px] sm:text-[11px] uppercase tracking-wider font-extrabold text-gray-500">
                 FAST. RELIABLE. PROFESSIONAL.
               </span>
@@ -32,7 +32,7 @@ export default function AboutServices() {
             {/* Main Section Heading */}
             <h2 className="text-3xl sm:text-4xl lg:text-[46px] xl:text-[52px] font-black text-gray-950 leading-[1.14] tracking-tight">
               Your One-Stop <br />
-              <span className="text-[#e51e25]">Appliance</span> Services
+              <span className="text-[#D31820]">Appliance</span> Services
             </h2>
 
             {/* Description Paragraph */}
@@ -42,7 +42,7 @@ export default function AboutServices() {
 
             {/* Feature 1: Our Affordable Price */}
             <div className="flex items-start gap-4 pt-1">
-              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#e51e25] flex items-center justify-center text-white shrink-0 shadow-md shadow-red-500/25 mt-0.5">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#D31820] flex items-center justify-center text-white shrink-0 shadow-md shadow-red-500/25 mt-0.5">
                 <Tag className="w-5 h-5 fill-white" />
               </div>
               <div className="space-y-0.5">
@@ -57,7 +57,7 @@ export default function AboutServices() {
 
             {/* Feature 2: Trusted Repair Service */}
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#e51e25] flex items-center justify-center text-white shrink-0 shadow-md shadow-red-500/25 mt-0.5">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#D31820] flex items-center justify-center text-white shrink-0 shadow-md shadow-red-500/25 mt-0.5">
                 <ShieldCheck className="w-5 h-5 text-white" />
               </div>
               <div className="space-y-0.5">
@@ -74,7 +74,7 @@ export default function AboutServices() {
             <div className="flex flex-wrap items-center gap-6 pt-3">
               <button 
                 type="button"
-                className="inline-flex items-center justify-center gap-2.5 bg-[#e51e25] text-white px-7 py-3.5 rounded-2xl font-bold text-sm shadow-lg shadow-red-500/25 hover:bg-[#c9181e] transition-all duration-200 active:scale-95"
+                className="inline-flex items-center justify-center gap-2.5 bg-[#D31820] text-white px-7 py-3.5 rounded-2xl font-bold text-sm shadow-lg shadow-red-600/25 hover:bg-[#b5141b] transition-all duration-200 active:scale-95"
               >
                 <span>Book a Service</span>
                 <ExternalLink className="w-4 h-4" />
@@ -82,7 +82,7 @@ export default function AboutServices() {
 
               <a 
                 href="#services"
-                className="inline-flex items-center gap-1.5 font-bold text-sm text-[#e51e25] hover:text-[#c9181e] transition-colors"
+                className="inline-flex items-center gap-1.5 font-bold text-sm text-[#D31820] hover:text-[#b5141b] transition-colors"
               >
                 <span>Our Services</span>
                 <ArrowRight className="w-4 h-4" />
@@ -91,23 +91,26 @@ export default function AboutServices() {
 
           </div>
 
-          {/* Right Column: Layered Image Composition */}
-          <div className="lg:col-span-6 relative flex items-center justify-center">
+          {/* Right Column: Layered Image Composition Matching Exact Figma 463x561 */}
+          <div className="lg:col-span-6 relative flex items-center justify-center lg:justify-end pr-4 sm:pr-8 py-6">
             
-            {/* Primary Main Image (Fix Machine) */}
-            <div className="relative w-full max-w-[480px] lg:max-w-[520px] rounded-[32px] overflow-hidden shadow-2xl border border-gray-100 bg-white">
-              <img 
-                src={fixMachine} 
-                alt="Appliance Repair Technician" 
-                className="w-full h-[400px] sm:h-[480px] lg:h-[520px] object-cover"
-              />
+            {/* Wrapper Container with exact Figma width: 463px */}
+            <div className="relative w-full max-w-[463px]">
+              
+              {/* 1. Main Primary Photo Card (Exact Figma: 463px x 561px, Radius 32px, Border 4px #FFFFFF) */}
+              <div className="w-full max-w-[463px] h-[480px] sm:h-[561px] rounded-[32px] border-[4px] border-white overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] bg-white">
+                <img 
+                  src={fixMachine} 
+                  alt="Appliance Repair Technician" 
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
 
-              {/* 10+ Years Experience Serrated Red Badge (Top Right) */}
-              <div className="absolute top-4 sm:top-6 right-4 sm:right-6 z-20">
-                <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center">
-                  {/* Serrated / Starburst Outer Ring */}
+              {/* 2. Red Serrated Starburst Badge (10+ YEARS OF EXPERIENCE - Top Right) */}
+              <div className="absolute -top-5 -right-5 sm:-top-6 sm:-right-7 z-30 pointer-events-none">
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center drop-shadow-[0_10px_25px_rgba(211,24,32,0.4)]">
                   <svg 
-                    className="absolute inset-0 w-full h-full text-[#D31820] drop-shadow-lg" 
+                    className="absolute inset-0 w-full h-full text-[#D31820]" 
                     viewBox="0 0 100 100"
                   >
                     <path
@@ -115,42 +118,42 @@ export default function AboutServices() {
                       fill="currentColor"
                     />
                   </svg>
-                  {/* Badge Text Content */}
                   <div className="relative z-10 flex flex-col items-center justify-center text-center text-white">
-                    <span className="text-xl sm:text-2xl font-black leading-none tracking-tight">10+</span>
-                    <span className="text-[7px] sm:text-[8px] font-black uppercase tracking-wider leading-tight mt-0.5">
+                    <span className="text-2xl sm:text-3xl font-black leading-none tracking-tight">10+</span>
+                    <span className="text-[7.5px] sm:text-[8.5px] font-black uppercase tracking-wider leading-tight mt-0.5">
                       YEARS OF<br />EXPERIENCE
                     </span>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Overlaid Secondary Image (Circuit Board) */}
-            <div className="absolute -bottom-6 sm:-bottom-8 -right-2 sm:-right-6 lg:-right-4 z-20 w-44 sm:w-56 lg:w-64 rounded-[26px] overflow-hidden shadow-2xl border-[5px] sm:border-[7px] border-white bg-white">
-              <img 
-                src={fixCircut} 
-                alt="Circuit Board Electronic Repair" 
-                className="w-full h-36 sm:h-48 lg:h-56 object-cover"
-              />
-            </div>
+              {/* 3. Secondary Overlaid Photo Card (Circuit Board - Bottom Right) */}
+              <div className="absolute -bottom-8 -right-6 sm:-bottom-10 sm:-right-10 z-20 w-48 sm:w-56 lg:w-60 h-56 sm:h-64 rounded-[28px] overflow-hidden shadow-[0_20px_45px_rgba(0,0,0,0.18)] border-[6px] sm:border-[8px] border-white bg-white">
+                <img 
+                  src={fixCircut} 
+                  alt="Circuit Board Electronic Repair" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
-            {/* Overlaid Floating Call Badge (Bottom Left) */}
-            <div className="absolute -bottom-4 sm:-bottom-6 left-2 sm:left-4 z-30 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-3.5 shadow-2xl border border-gray-100 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#e51e25] flex items-center justify-center text-white shadow-md shadow-red-500/30 shrink-0">
-                <Phone className="w-4 h-4 fill-white" />
+              {/* 4. Floating Contact Pill Card (Bottom Left) */}
+              <div className="absolute -bottom-6 -left-6 sm:-bottom-8 sm:-left-8 z-30 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-3.5 px-4 shadow-[0_15px_35px_rgba(0,0,0,0.1)] border border-gray-100 flex items-center gap-3">
+                <div className="w-11 h-11 rounded-full bg-[#D31820] flex items-center justify-center text-white shadow-lg shadow-red-500/30 shrink-0">
+                  <Phone className="w-4 h-4 fill-white" />
+                </div>
+                <div className="text-left">
+                  <span className="block text-[9px] font-extrabold uppercase tracking-wider text-gray-400 leading-none">
+                    NEED HELP FAST?
+                  </span>
+                  <span className="block text-sm sm:text-base font-black text-gray-900 leading-tight mt-1">
+                    (204) 500-2474
+                  </span>
+                  <span className="block text-[9.5px] font-semibold text-[#D31820] leading-none mt-0.5">
+                    We're here to help, anytime.
+                  </span>
+                </div>
               </div>
-              <div className="text-left">
-                <span className="block text-[9px] font-extrabold uppercase tracking-wider text-gray-400">
-                  NEED HELP FAST?
-                </span>
-                <span className="block text-xs sm:text-sm font-black text-gray-900 leading-tight">
-                  (204) 500-2474
-                </span>
-                <span className="block text-[9px] font-medium text-gray-400">
-                  We're here to help, anytime.
-                </span>
-              </div>
+
             </div>
 
           </div>
