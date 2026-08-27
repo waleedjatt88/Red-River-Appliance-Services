@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../assets/logo.png';
+import Logo from './Logo';
 import heroImg from '../assets/hero.png';
 import { 
   Clock, 
@@ -39,14 +39,10 @@ export default function HeroAndNavbar() {
       <header className="relative z-50 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 pt-4 sm:pt-5">
         <div className="flex items-center justify-between">
           
-          {/* Brand Logo */}
+          {/* Brand Logo (Razor Sharp Vector Component) */}
           <div className="flex-shrink-0 z-20">
-            <a href="#" className="block">
-              <img 
-                src={logo} 
-                alt="Red River Appliance Service" 
-                className="h-10 sm:h-12 w-auto object-contain"
-              />
+            <a href="#" className="block hover:opacity-95 transition">
+              <Logo />
             </a>
           </div>
 
