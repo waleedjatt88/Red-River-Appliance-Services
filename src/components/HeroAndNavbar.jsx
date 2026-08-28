@@ -246,7 +246,7 @@ export default function HeroAndNavbar() {
           >
             
             {/* Card 1: 24/7 Availability (Top-Left of appliances) */}
-            <div className="absolute top-[8%] left-[2%] xl:left-[6%] bg-gradient-to-b from-white/95 to-[rgba(255,255,255,0.7)] backdrop-blur-md rounded-[24px] p-[24px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] border border-white/50 flex flex-col items-start justify-center gap-[19px] w-[148px] h-[156px] pointer-events-auto hover:scale-105 transition-all duration-300">
+            <div className="absolute top-[8%] left-[2%] xl:left-[6%] bg-gradient-to-br from-white/95 to-[#999999]/25 backdrop-blur-xl rounded-[24px] p-[24px] shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-white/80 flex flex-col items-start justify-center gap-[19px] w-[148px] h-[156px] pointer-events-auto hover:scale-105 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(229,30,37,0.15)] transition-all duration-300">
               <div className="w-10 h-10 rounded-full bg-[#D31820] flex items-center justify-center text-white shrink-0">
                 <Clock className="w-5 h-5 text-white" />
               </div>
@@ -257,7 +257,7 @@ export default function HeroAndNavbar() {
             </div>
 
             {/* Card 2: Satisfaction Guaranteed (Top-Right of appliances) */}
-            <div className="absolute top-[5%] right-[-5%] xl:right-[-6%] bg-gradient-to-b from-white/95 to-[rgba(255,255,255,0.7)] backdrop-blur-md rounded-[24px] p-[24px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] border border-white/50 flex flex-col items-start justify-center gap-[19px] w-[148px] h-[156px] pointer-events-auto hover:scale-105 transition-all duration-300">
+            <div className="absolute top-[5%] right-[-5%] xl:right-[-6%] bg-gradient-to-br from-white/95 to-[#999999]/25 backdrop-blur-xl rounded-[24px] p-[24px] shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-white/80 flex flex-col items-start justify-center gap-[19px] w-[148px] h-[156px] pointer-events-auto hover:scale-105 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(229,30,37,0.15)] transition-all duration-300">
               <div className="flex items-center justify-center text-[#D31820] shrink-0">
                 <ThumbsUp className="w-9 h-9 fill-[#D31820]" />
               </div>
@@ -268,7 +268,7 @@ export default function HeroAndNavbar() {
             </div>
 
             {/* Card 3: Trusted Technicians (Bottom-Left in front of pedestal) */}
-            <div className="absolute bottom-[-8%] left-[15%] xl:left-[22%] bg-gradient-to-b from-white/95 to-[rgba(255,255,255,0.7)] backdrop-blur-md rounded-[24px] p-[24px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] border border-white/50 flex flex-col items-start justify-center gap-[19px] w-[148px] h-[156px] pointer-events-auto hover:scale-105 transition-all duration-300">
+            <div className="absolute bottom-[-8%] left-[15%] xl:left-[22%] bg-gradient-to-br from-white/95 to-[#999999]/25 backdrop-blur-xl rounded-[24px] p-[24px] shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-white/80 flex flex-col items-start justify-center gap-[19px] w-[148px] h-[156px] pointer-events-auto hover:scale-105 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(229,30,37,0.15)] transition-all duration-300">
               <div className="flex items-center justify-center text-[#D31820] shrink-0">
                 <ShieldCheck className="w-9 h-9 fill-[#D31820] text-white" />
               </div>
@@ -279,7 +279,7 @@ export default function HeroAndNavbar() {
             </div>
 
             {/* Card 4: Upfront Pricing (Bottom-Right next to dishwasher) */}
-            <div className="absolute bottom-[-2%] right-[-5%] xl:right-[-2%] bg-gradient-to-b from-white/95 to-[rgba(255,255,255,0.7)] backdrop-blur-md rounded-[24px] p-[24px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] border border-white/50 flex flex-col items-start justify-center gap-[19px] w-[148px] h-[156px] pointer-events-auto hover:scale-105 transition-all duration-300">
+            <div className="absolute bottom-[-2%] right-[-5%] xl:right-[-2%] bg-gradient-to-br from-white/95 to-[#999999]/25 backdrop-blur-xl rounded-[24px] p-[24px] shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-white/80 flex flex-col items-start justify-center gap-[19px] w-[148px] h-[156px] pointer-events-auto hover:scale-105 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(229,30,37,0.15)] transition-all duration-300">
               <div className="flex items-center justify-center text-[#D31820] shrink-0">
                 <Wrench className="w-9 h-9 fill-[#D31820] text-white" />
               </div>
