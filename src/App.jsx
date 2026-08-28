@@ -30,7 +30,7 @@ export default function App() {
   }
 
   return (
-    <div className="w-full min-h-screen bg-[#fafafa] flex flex-col">
+    <div className="w-full min-h-screen bg-[#FAFAFC] flex flex-col">
       <HeroAndNavbar />
       <WhyChooseUs />
       <AboutServices />

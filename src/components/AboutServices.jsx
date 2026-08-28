@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 export default function AboutServices() {
   return (
-    <section 
+    <section
       className="relative w-full py-20 lg:py-28 overflow-hidden select-none"
       style={{
         background: 'linear-gradient(135deg, rgba(211, 24, 32, 0.08) 0%, #FFFFFF 50%, rgba(211, 24, 32, 0.20) 100%)'
@@ -18,16 +18,16 @@ export default function AboutServices() {
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
+
           {/* Left Column: Content & Benefits */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="lg:col-span-6 space-y-6 sm:space-y-7 max-w-xl"
           >
-            
+
             {/* Top Small Badge */}
             <div className="inline-flex items-center gap-2 bg-white px-3.5 py-1.5 rounded-full border border-gray-200/80 shadow-[0_2px_10px_rgba(0,0,0,0.04)]">
               <span className="text-[#D31820] text-xs font-bold">✦</span>
@@ -79,7 +79,7 @@ export default function AboutServices() {
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-6 pt-3">
-              <button 
+              <button
                 type="button"
                 className="inline-flex items-center justify-center gap-2.5 bg-[#D31820] text-white px-7 py-3.5 rounded-2xl font-bold text-sm shadow-lg shadow-red-600/25 hover:bg-[#b5141b] transition-all duration-200 active:scale-95"
               >
@@ -87,7 +87,7 @@ export default function AboutServices() {
                 <ExternalLink className="w-4 h-4" />
               </button>
 
-              <a 
+              <a
                 href="#services"
                 className="inline-flex items-center gap-1.5 font-bold text-sm text-[#D31820] hover:text-[#b5141b] transition-colors"
               >
@@ -99,22 +99,22 @@ export default function AboutServices() {
           </motion.div>
 
           {/* Right Column: Layered Image Composition Matching Exact Figma 463x561 */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="lg:col-span-6 relative flex items-center justify-center lg:justify-end py-10 sm:py-6 w-full"
+            className="lg:col-span-6 relative flex items-center justify-center lg:justify-center py-10 sm:py-6 w-full"
           >
-            
+
             {/* Wrapper Container with exact Figma width: 463px */}
             <div className="relative w-[90%] sm:w-full max-w-[463px] mx-auto lg:mx-0">
-              
+
               {/* 1. Main Primary Photo Card (Exact Figma: 463px x 561px, Radius 32px, Border 4px #FFFFFF) */}
               <div className="w-full max-w-[463px] h-[380px] sm:h-[561px] rounded-[24px] sm:rounded-[32px] border-[4px] border-white overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] bg-white">
-                <img 
-                  src={fixMachine} 
-                  alt="Appliance Repair Technician" 
+                <img
+                  src={fixMachine}
+                  alt="Appliance Repair Technician"
                   className="w-full h-full object-cover object-center"
                 />
               </div>
@@ -122,8 +122,8 @@ export default function AboutServices() {
               {/* 2. Red Serrated Starburst Badge (10+ YEARS OF EXPERIENCE - Top Right) */}
               <div className="absolute -top-4 -right-3 sm:-top-6 sm:-right-7 z-30 pointer-events-none">
                 <div className="relative w-20 h-20 sm:w-28 sm:h-28 flex items-center justify-center drop-shadow-[0_10px_25px_rgba(211,24,32,0.4)]">
-                  <svg 
-                    className="absolute inset-0 w-full h-full text-[#D31820]" 
+                  <svg
+                    className="absolute inset-0 w-full h-full text-[#D31820]"
                     viewBox="0 0 100 100"
                   >
                     <path
@@ -142,9 +142,9 @@ export default function AboutServices() {
 
               {/* 3. Secondary Overlaid Photo Card (Circuit Board - Bottom Right) */}
               <div className="absolute -bottom-6 -right-2 sm:-bottom-10 sm:-right-10 z-20 w-36 sm:w-56 lg:w-60 h-40 sm:h-64 rounded-[20px] sm:rounded-[28px] overflow-hidden shadow-[0_20px_45px_rgba(0,0,0,0.18)] border-[5px] sm:border-[8px] border-white bg-white">
-                <img 
-                  src={fixCircut} 
-                  alt="Circuit Board Electronic Repair" 
+                <img
+                  src={fixCircut}
+                  alt="Circuit Board Electronic Repair"
                   className="w-full h-full object-cover"
                 />
               </div>

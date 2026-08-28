@@ -23,7 +23,7 @@ export default function HeroAndNavbar() {
   const navLinks = ['Home', 'Services', 'Brands', 'Reviews', 'Blog', 'Contact Us'];
 
   return (
-    <div className="relative w-full min-h-screen lg:h-screen overflow-hidden bg-[#fafafa] select-none flex flex-col justify-between">
+    <section className="relative w-full min-h-[950px] sm:min-h-[900px] lg:min-h-[850px] lg:h-[95vh] xl:h-[100vh] overflow-hidden bg-[#FAFAFC] flex flex-col font-sans select-none">
       
       {/* 1. FULL HERO BACKGROUND IMAGE */}
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none overflow-hidden flex items-end justify-center">
@@ -48,7 +48,7 @@ export default function HeroAndNavbar() {
           </div>
 
           {/* Floating Pill Navigation Menu */}
-          <nav className="hidden md:flex items-center space-x-6 bg-white/95 backdrop-blur-md px-8 py-3 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-gray-100/90">
+          <nav className="hidden md:flex items-center justify-center gap-[20px] bg-white px-[24px] py-[8px] h-[66px] rounded-[100px] shadow-[0_4px_25px_rgba(0,0,0,0.04)] border-[1.5px] border-gray-100">
             {navLinks.map((item) => {
               const isActive = activeTab === item;
               return (
@@ -130,7 +130,7 @@ export default function HeroAndNavbar() {
       </header>
 
       {/* 3. HERO CONTENT WRAPPER */}
-      <main className="relative z-10 flex-1 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 w-full flex items-center py-2 lg:py-0">
+      <main className="relative z-10 flex-1 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 w-full flex items-center pt-12 sm:pt-16 lg:pt-24 pb-12 sm:pb-16 lg:pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full">
           
           {/* Left Column: Hero Headlines, Actions & Feature Bar */}
@@ -246,39 +246,47 @@ export default function HeroAndNavbar() {
           >
             
             {/* Card 1: 24/7 Availability (Top-Left of appliances) */}
-            <div className="absolute top-[8%] left-[2%] xl:left-[6%] bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100 flex flex-col items-center justify-center w-24 h-24 xl:w-28 xl:h-28 pointer-events-auto hover:scale-105 transition-all duration-300">
-              <div className="w-7 h-7 xl:w-8 xl:h-8 rounded-full bg-[#e51e25] flex items-center justify-center text-white mb-1 shadow-md shadow-red-500/25">
-                <Clock className="w-4 h-4 text-white" />
+            <div className="absolute top-[8%] left-[2%] xl:left-[6%] bg-gradient-to-b from-white/95 to-[rgba(255,255,255,0.7)] backdrop-blur-md rounded-[24px] p-[24px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] border border-white/50 flex flex-col items-start justify-center gap-[19px] w-[148px] h-[156px] pointer-events-auto hover:scale-105 transition-all duration-300">
+              <div className="w-10 h-10 rounded-full bg-[#D31820] flex items-center justify-center text-white shrink-0">
+                <Clock className="w-5 h-5 text-white" />
               </div>
-              <span className="text-[11px] xl:text-xs font-black text-gray-900 leading-tight">24/7</span>
-              <span className="text-[9px] xl:text-[10px] font-medium text-gray-500">Availability</span>
+              <div className="flex flex-col items-start text-left">
+                <span className="text-[14px] font-bold text-[#1f2937] leading-tight">24/7</span>
+                <span className="text-[14px] font-bold text-[#1f2937] leading-tight">Availability</span>
+              </div>
             </div>
 
             {/* Card 2: Satisfaction Guaranteed (Top-Right of appliances) */}
-            <div className="absolute top-[12%] right-[2%] xl:right-[6%] bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100 flex flex-col items-center justify-center w-28 h-24 xl:w-32 xl:h-28 pointer-events-auto hover:scale-105 transition-all duration-300">
-              <div className="w-7 h-7 xl:w-8 xl:h-8 rounded-xl bg-red-50 flex items-center justify-center text-[#e51e25] mb-1">
-                <ThumbsUp className="w-4 h-4 fill-[#e51e25]" />
+            <div className="absolute top-[5%] right-[-5%] xl:right-[-6%] bg-gradient-to-b from-white/95 to-[rgba(255,255,255,0.7)] backdrop-blur-md rounded-[24px] p-[24px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] border border-white/50 flex flex-col items-start justify-center gap-[19px] w-[148px] h-[156px] pointer-events-auto hover:scale-105 transition-all duration-300">
+              <div className="flex items-center justify-center text-[#D31820] shrink-0">
+                <ThumbsUp className="w-9 h-9 fill-[#D31820]" />
               </div>
-              <span className="text-[10px] xl:text-xs font-bold text-gray-900 leading-tight text-center">Satisfaction</span>
-              <span className="text-[8px] xl:text-[9px] font-medium text-gray-500 text-center">Guaranteed</span>
+              <div className="flex flex-col items-start text-left">
+                <span className="text-[14px] font-bold text-[#1f2937] leading-tight">Satisfaction</span>
+                <span className="text-[14px] font-bold text-[#1f2937] leading-tight">Guaranteed</span>
+              </div>
             </div>
 
             {/* Card 3: Trusted Technicians (Bottom-Left in front of pedestal) */}
-            <div className="absolute bottom-[10%] left-[10%] xl:left-[16%] bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100 flex flex-col items-center justify-center w-28 h-24 xl:w-32 xl:h-28 pointer-events-auto hover:scale-105 transition-all duration-300">
-              <div className="w-7 h-7 xl:w-8 xl:h-8 rounded-xl bg-[#e51e25] flex items-center justify-center text-white mb-1 shadow-md shadow-red-500/25">
-                <ShieldCheck className="w-4 h-4 text-white" />
+            <div className="absolute bottom-[-8%] left-[15%] xl:left-[22%] bg-gradient-to-b from-white/95 to-[rgba(255,255,255,0.7)] backdrop-blur-md rounded-[24px] p-[24px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] border border-white/50 flex flex-col items-start justify-center gap-[19px] w-[148px] h-[156px] pointer-events-auto hover:scale-105 transition-all duration-300">
+              <div className="flex items-center justify-center text-[#D31820] shrink-0">
+                <ShieldCheck className="w-9 h-9 fill-[#D31820] text-white" />
               </div>
-              <span className="text-[10px] xl:text-xs font-bold text-gray-900 leading-tight text-center">Trusted</span>
-              <span className="text-[8px] xl:text-[9px] font-medium text-gray-500 text-center">Technicians</span>
+              <div className="flex flex-col items-start text-left">
+                <span className="text-[14px] font-bold text-[#1f2937] leading-tight">Trusted</span>
+                <span className="text-[14px] font-bold text-[#1f2937] leading-tight">Technicians</span>
+              </div>
             </div>
 
             {/* Card 4: Upfront Pricing (Bottom-Right next to dishwasher) */}
-            <div className="absolute bottom-[16%] right-[2%] xl:right-[6%] bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100 flex flex-col items-center justify-center w-24 h-24 xl:w-28 xl:h-28 pointer-events-auto hover:scale-105 transition-all duration-300">
-              <div className="w-7 h-7 xl:w-8 xl:h-8 rounded-xl bg-red-50 flex items-center justify-center text-[#e51e25] mb-1">
-                <Wrench className="w-4 h-4 text-[#e51e25]" />
+            <div className="absolute bottom-[-2%] right-[-5%] xl:right-[-2%] bg-gradient-to-b from-white/95 to-[rgba(255,255,255,0.7)] backdrop-blur-md rounded-[24px] p-[24px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] border border-white/50 flex flex-col items-start justify-center gap-[19px] w-[148px] h-[156px] pointer-events-auto hover:scale-105 transition-all duration-300">
+              <div className="flex items-center justify-center text-[#D31820] shrink-0">
+                <Wrench className="w-9 h-9 fill-[#D31820] text-white" />
               </div>
-              <span className="text-[10px] xl:text-xs font-bold text-gray-900 leading-tight text-center">Upfront</span>
-              <span className="text-[8px] xl:text-[9px] font-medium text-gray-500 text-center">Pricing</span>
+              <div className="flex flex-col items-start text-left">
+                <span className="text-[14px] font-bold text-[#1f2937] leading-tight">Upfront</span>
+                <span className="text-[14px] font-bold text-[#1f2937] leading-tight">Pricing</span>
+              </div>
             </div>
 
           </motion.div>
@@ -286,6 +294,6 @@ export default function HeroAndNavbar() {
         </div>
       </main>
 
-    </div>
+    </section>
   );
 }
