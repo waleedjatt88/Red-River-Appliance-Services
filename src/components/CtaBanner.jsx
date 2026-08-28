@@ -1,6 +1,7 @@
 import React from 'react';
 import hereToHelpImg from '../assets/here to help.png';
 import { Phone, Calendar, ShieldCheck, Zap, Smile, Asterisk } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function CtaBanner() {
   const miniFeatures = [
@@ -23,16 +24,22 @@ export default function CtaBanner() {
 
   return (
     <section className="relative w-full bg-white py-16 lg:py-24 overflow-hidden select-none">
-      
+
       {/* Background Soft Glow */}
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-[rgba(211,24,32,0.04)] rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          
+
           {/* Left Column: Heading, Subtext, Badges & Dual CTA Buttons */}
-          <div className="lg:col-span-6 space-y-6 sm:space-y-7 max-w-xl">
-            
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="lg:col-span-6 space-y-6 sm:space-y-7 max-w-xl"
+          >
+
             {/* Top Solid Red Badge */}
             <div className="inline-flex items-center gap-1.5 bg-[#D31820] text-white px-3.5 py-1.5 rounded-full shadow-md shadow-red-500/20">
               <Asterisk className="w-3.5 h-3.5 text-white animate-spin-slow" />
@@ -42,9 +49,9 @@ export default function CtaBanner() {
             </div>
 
             {/* Main Headline */}
-            <h2 className="text-3xl sm:text-4xl lg:text-[48px] xl:text-[54px] font-black text-gray-950 leading-[1.12] tracking-tight">
-              Appliance Not Working? <br />
-              <span className="text-[#D31820]">We’re Here to Help!</span>
+            <h2 className="text-[32px] sm:text-4xl lg:text-[46px] xl:text-[52px] font-black text-gray-950 leading-[1.1] tracking-tight flex flex-col">
+              <span className="sm:whitespace-nowrap">Appliance Not Working?</span>
+              <span className="text-[#D31820] sm:whitespace-nowrap">We’re Here to Help!</span>
             </h2>
 
             {/* Subtext Paragraph */}
@@ -76,7 +83,7 @@ export default function CtaBanner() {
 
             {/* 2 CTA Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-3">
-              
+
               {/* Call Now Button */}
               <a
                 href="tel:2041234567"
@@ -97,16 +104,22 @@ export default function CtaBanner() {
 
             </div>
 
-          </div>
+          </motion.div>
 
           {/* Right Column: Hero Appliance Composition */}
-          <div className="lg:col-span-6 flex items-center justify-center lg:justify-end">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            className="lg:col-span-6 flex items-center justify-center lg:justify-end"
+          >
             <img
               src={hereToHelpImg}
               alt="Appliance Repair Specialists Ready to Help"
               className="w-full max-w-[540px] lg:max-w-[620px] h-auto object-contain drop-shadow-xl"
             />
-          </div>
+          </motion.div>
 
         </div>
       </div>

@@ -65,10 +65,10 @@ export default function WhyChooseUs() {
             return (
               <div
                 key={item.num}
-                className="bg-white rounded-[26px] p-7 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100/90 flex flex-col justify-between hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 group"
+                className="w-full max-w-[302px] mx-auto h-[236px] rounded-[24px] border border-gray-100 p-8 flex flex-col gap-6 bg-[linear-gradient(180deg,#FFFFFF_0%,rgba(255,190,192,0.0627)_100%)] shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 group"
               >
                 {/* Card Top: Icon & Number */}
-                <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center justify-between">
                   {item.iconType === 'solid' ? (
                     <div className="w-11 h-11 rounded-full bg-[#e51e25] flex items-center justify-center text-white shadow-md shadow-red-500/25 group-hover:scale-110 transition-transform">
                       <Icon className="w-5 h-5 text-white" />

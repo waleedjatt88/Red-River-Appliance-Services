@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Loader from './components/Loader';
 import HeroAndNavbar from './components/HeroAndNavbar';
 import WhyChooseUs from './components/WhyChooseUs';
 import AboutServices from './components/AboutServices';
@@ -14,6 +15,20 @@ import CtaBanner from './components/CtaBanner';
 import Footer from './components/Footer';
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate initial data/asset loading
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1200);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader fullScreen={true} />;
+  }
+
   return (
     <div className="w-full min-h-screen bg-[#fafafa] flex flex-col">
       <HeroAndNavbar />

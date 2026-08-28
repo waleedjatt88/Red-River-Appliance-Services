@@ -12,6 +12,7 @@ import {
   ArrowRight, 
   CheckCircle2 
 } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function ContactSection() {
   const [selectedService, setSelectedService] = useState('Repair');
@@ -39,7 +40,7 @@ export default function ContactSection() {
   return (
     <section 
       id="contact"
-      className="relative w-full min-h-[720px] lg:min-h-[820px] bg-white py-14 lg:py-20 overflow-hidden select-none flex items-center"
+      className="relative w-full min-h-[720px] lg:min-h-[820px] bg-white pt-16 pb-14 lg:pt-24 lg:pb-20 overflow-hidden select-none flex items-start"
     >
       {/* 1. Full-Width Background Artwork (Flipped to place appliances on the left) */}
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none overflow-hidden">
@@ -49,14 +50,14 @@ export default function ContactSection() {
           className="w-full h-full object-cover object-bottom scale-x-[-1]"
         />
 
-        {/* Smooth Top-to-Bottom White Fade matching Figma header clarity */}
-        <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-white via-white/80 to-transparent pointer-events-none" />
+        {/* Strong Top-to-Bottom White Fade to ensure heading background is completely white */}
+        <div className="absolute inset-x-0 top-0 h-[450px] lg:h-[550px] bg-gradient-to-b from-white via-white/95 to-transparent pointer-events-none" />
 
         {/* Soft Pink Ambient Glow on Top Right matching Figma */}
         <div className="absolute top-0 right-0 w-[500px] h-[350px] bg-[rgba(211,24,32,0.06)] rounded-full blur-3xl pointer-events-none" />
         
         {/* Soft overlay for mobile */}
-        <div className="absolute inset-0 bg-white/85 sm:bg-white/60 lg:hidden" />
+        <div className="absolute inset-0 bg-white/90 sm:bg-white/60 lg:hidden" />
       </div>
 
       {/* 2. Content & Form Wrapper */}
@@ -64,33 +65,45 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column: Heading & Paragraph (Compact & Clean Fitting) */}
-          <div className="lg:col-span-5 space-y-3 lg:space-y-3.5 max-w-md lg:mb-auto lg:pt-3">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="lg:col-span-5 space-y-3.5 lg:space-y-4 max-w-[520px] lg:mb-auto relative z-20"
+          >
             
             {/* Top Dot Tag */}
-            <div className="flex items-center gap-1.5 text-[11px] font-extrabold text-[#D31820] tracking-wider uppercase">
+            <div className="flex items-center gap-2 text-[11px] font-black text-[#D31820] tracking-wider uppercase mb-1">
               <span className="w-2 h-2 rounded-full bg-[#D31820]" />
               <span>GET IN TOUCH</span>
             </div>
 
             {/* Main Headline */}
-            <h2 className="text-2xl sm:text-3xl lg:text-[38px] xl:text-[42px] font-black text-gray-950 leading-[1.14] tracking-tight">
-              Call or <br />
+            <h2 className="text-[38px] sm:text-5xl lg:text-[42px] xl:text-[48px] font-black text-gray-950 leading-[1.05] sm:leading-[1.05] tracking-tight mb-3 flex flex-col sm:block">
+              <span>Call or</span>
               <span className="text-[#D31820]">Email Us Today</span>
             </h2>
 
             {/* Description Subtext */}
-            <p className="text-gray-500 text-xs sm:text-[13px] leading-relaxed max-w-[360px]">
+            <p className="text-gray-500 text-sm sm:text-[14.5px] leading-[1.6] max-w-[480px]">
               Connect with us today to explore how our expertise can help you with your repair needs. Call at{' '}
-              <a href="tel:4316688184" className="font-bold text-gray-900 hover:text-[#D31820] transition-colors">
+              <a href="tel:4316688184" className="text-gray-500 hover:text-[#D31820] transition-colors">
                 431-668-8184
               </a>{' '}
               or fill out the form below and describe the problem you have.
             </p>
 
-          </div>
+          </motion.div>
 
           {/* Right Column: Inquiry Form Card with Exact Figma Shadows */}
-          <div className="lg:col-span-7 flex justify-center lg:justify-end">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            className="lg:col-span-7 flex justify-center lg:justify-end"
+          >
             <div className="bg-white rounded-[32px] sm:rounded-[36px] p-6 sm:p-8 lg:p-8 shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100/90 w-full max-w-[560px] relative">
               
               {submitted ? (
@@ -116,43 +129,43 @@ export default function ContactSection() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-5">
                   
                   {/* Row 1: Full Name & Email Address */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     
                     {/* Full Name */}
-                    <div className="space-y-1">
-                      <label className="block text-xs font-bold text-gray-900">
+                    <div>
+                      <label className="block text-[13px] font-black text-gray-950 mb-1.5">
                         Full Name
                       </label>
                       <div className="relative">
-                        <User className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                        <User className="w-[18px] h-[18px] text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                         <input
                           required
                           type="text"
                           placeholder="Enter your full name"
                           value={formData.fullName}
                           onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                          className="w-full bg-[#f6f8fb] border border-gray-200/90 rounded-2xl pl-10 pr-4 py-2.5 sm:py-3 text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#D31820] focus:ring-1 focus:ring-[#D31820] transition"
+                          className="w-full bg-[#FAFAFA] border border-gray-200/80 rounded-[12px] pl-10 pr-4 py-3 text-[13px] text-gray-900 placeholder-gray-500 focus:outline-none focus:border-[#D31820] focus:ring-1 focus:ring-[#D31820] transition"
                         />
                       </div>
                     </div>
 
                     {/* Email Address */}
-                    <div className="space-y-1">
-                      <label className="block text-xs font-bold text-gray-900">
+                    <div>
+                      <label className="block text-[13px] font-black text-gray-950 mb-1.5">
                         Email Address
                       </label>
                       <div className="relative">
-                        <Mail className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                        <Mail className="w-[18px] h-[18px] text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                         <input
                           required
                           type="email"
                           placeholder="Enter your email address"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full bg-[#f6f8fb] border border-gray-200/90 rounded-2xl pl-10 pr-4 py-2.5 sm:py-3 text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#D31820] focus:ring-1 focus:ring-[#D31820] transition"
+                          className="w-full bg-[#FAFAFA] border border-gray-200/80 rounded-[12px] pl-10 pr-4 py-3 text-[13px] text-gray-900 placeholder-gray-500 focus:outline-none focus:border-[#D31820] focus:ring-1 focus:ring-[#D31820] transition"
                         />
                       </div>
                     </div>
@@ -160,29 +173,29 @@ export default function ContactSection() {
                   </div>
 
                   {/* Row 2: Phone Number */}
-                  <div className="space-y-1">
-                    <label className="block text-xs font-bold text-gray-900">
+                  <div>
+                    <label className="block text-[13px] font-black text-gray-950 mb-1.5">
                       Phone Number
                     </label>
                     <div className="relative">
-                      <Phone className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                      <Phone className="w-[18px] h-[18px] text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                       <input
                         required
                         type="tel"
                         placeholder="Enter your phone number"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full bg-[#f6f8fb] border border-gray-200/90 rounded-2xl pl-10 pr-4 py-2.5 sm:py-3 text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#D31820] focus:ring-1 focus:ring-[#D31820] transition"
+                        className="w-full bg-[#FAFAFA] border border-gray-200/80 rounded-[12px] pl-10 pr-4 py-3 text-[13px] text-gray-900 placeholder-gray-500 focus:outline-none focus:border-[#D31820] focus:ring-1 focus:ring-[#D31820] transition"
                       />
                     </div>
                   </div>
 
                   {/* Row 3: Service Required (5 Selectable Cards) */}
-                  <div className="space-y-1 pt-0.5">
-                    <label className="block text-xs font-bold text-gray-900">
+                  <div>
+                    <label className="block text-[13px] font-black text-gray-950 mb-1.5">
                       Service Required
                     </label>
-                    <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
+                    <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
                       {services.map((item) => {
                         const Icon = item.icon;
                         const isSelected = selectedService === item.id;
@@ -191,28 +204,26 @@ export default function ContactSection() {
                             key={item.id}
                             type="button"
                             onClick={() => setSelectedService(item.id)}
-                            className={`p-2 rounded-2xl border flex flex-col items-center justify-between text-center transition-all duration-200 cursor-pointer h-[74px] ${
+                            className={`p-3 rounded-[12px] border flex flex-col items-center justify-center text-center transition-all duration-200 cursor-pointer h-[90px] ${
                               isSelected
-                                ? 'bg-red-50/60 border-[#D31820] text-[#D31820] shadow-sm'
-                                : 'bg-white border-gray-200/80 text-gray-700 hover:border-gray-300'
+                                ? 'bg-red-50/40 border-[#D31820] shadow-[0_4px_15px_rgba(211,24,32,0.06)]'
+                                : 'bg-white border-gray-200 hover:border-gray-300'
                             }`}
                           >
                             <Icon
-                              className={`w-4 h-4 ${
-                                isSelected ? 'text-[#D31820]' : 'text-gray-600'
+                              className={`w-5 h-5 mb-2 ${
+                                isSelected ? 'text-[#D31820]' : 'text-gray-900'
                               }`}
                             />
-                            <span className="text-[10.5px] font-bold leading-tight">
+                            <span className="text-[11px] font-bold text-gray-950 leading-tight mb-2">
                               {item.label}
                             </span>
                             {/* Selection Radio Dot */}
-                            <span
-                              className={`w-2 h-2 rounded-full border ${
-                                isSelected
-                                  ? 'bg-[#D31820] border-[#D31820]'
-                                  : 'border-gray-300 bg-transparent'
-                              }`}
-                            />
+                            {isSelected ? (
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#D31820]" />
+                            ) : (
+                              <span className="w-[7px] h-[7px] rounded-full border border-gray-300 bg-transparent" />
+                            )}
                           </button>
                         );
                       })}
@@ -220,27 +231,27 @@ export default function ContactSection() {
                   </div>
 
                   {/* Row 4: Tell Us About Your Issue */}
-                  <div className="space-y-1 pt-0.5">
-                    <label className="block text-xs font-bold text-gray-900">
+                  <div>
+                    <label className="block text-[13px] font-black text-gray-950 mb-1.5">
                       Tell Us About Your Issue
                     </label>
                     <textarea
-                      rows="3"
+                      rows="4"
                       placeholder="Provide details about your appliance issue (e.g. brand, symptoms, error codes)..."
                       value={formData.issue}
                       onChange={(e) => setFormData({ ...formData, issue: e.target.value })}
-                      className="w-full bg-[#f6f8fb] border border-gray-200/90 rounded-2xl p-3 text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#D31820] focus:ring-1 focus:ring-[#D31820] transition resize-none"
+                      className="w-full bg-[#FAFAFA] border border-gray-200/80 rounded-[12px] p-3 text-[13px] text-gray-900 placeholder-gray-500 focus:outline-none focus:border-[#D31820] focus:ring-1 focus:ring-[#D31820] transition resize-none"
                     />
                   </div>
 
                   {/* Row 5: Submit Inquiry Button */}
-                  <div className="pt-1">
+                  <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full py-3.5 rounded-2xl bg-[#D31820] hover:bg-[#b5141b] text-white font-bold text-sm sm:text-base shadow-lg shadow-red-600/30 flex items-center justify-center gap-2 transition-all duration-200 active:scale-98 cursor-pointer"
+                      className="w-full py-4 rounded-[10px] bg-[#D31820] hover:bg-[#b5141b] text-white font-bold text-[15px] shadow-[0_8px_20px_rgba(211,24,32,0.25)] flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.98] cursor-pointer"
                     >
                       <span>Submit Inquiry</span>
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight className="w-[18px] h-[18px]" />
                     </button>
                   </div>
 
@@ -248,7 +259,7 @@ export default function ContactSection() {
               )}
 
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

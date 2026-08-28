@@ -27,13 +27,13 @@ export default function EasyProcess() {
   ];
 
   return (
-    <section className="relative w-full bg-gradient-to-b from-white via-white to-[#fffafa] py-20 lg:py-28 overflow-hidden select-none">
+    <section className="relative w-full bg-gradient-to-b from-white via-white to-[#fffafa] py-8 lg:py-10 overflow-hidden select-none">
       
       {/* Soft Ambient Light on Bottom Left */}
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[rgba(211,24,32,0.06)] rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
           
           {/* Left Column: Heading & Video/Image Container */}
           <div className="lg:col-span-6 space-y-6">
@@ -56,7 +56,7 @@ export default function EasyProcess() {
               <img
                 src={fixesEasilyImg}
                 alt="Appliance Repair Process Technician"
-                className="w-full h-[320px] sm:h-[380px] lg:h-[400px] object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-[280px] sm:h-[300px] lg:h-[320px] object-cover group-hover:scale-105 transition-transform duration-500"
               />
 
               {/* Floating Center Play Button */}
@@ -74,27 +74,28 @@ export default function EasyProcess() {
           </div>
 
           {/* Right Column: 4 Process Step Cards */}
-          <div className="lg:col-span-6 space-y-4 sm:space-y-4.5">
+          <div className="lg:col-span-6 space-y-3 sm:space-y-4">
             {steps.map((step) => (
               <div
                 key={step.num}
-                className="bg-white rounded-[22px] sm:rounded-[24px] p-4 sm:p-5 shadow-[0_4px_25px_rgba(0,0,0,0.03)] border border-gray-100/90 flex items-center gap-4 sm:gap-5 hover:shadow-[0_12px_35px_rgba(0,0,0,0.07)] hover:translate-x-1 transition-all duration-300 group"
+                className="relative w-full max-w-[545px] min-h-[96px] rounded-[16px] py-4 pl-[20px] sm:pl-[93px] pr-5 sm:pr-[93px] shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100/90 flex flex-col justify-center gap-[4px] hover:shadow-[0_15px_40px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-300 group bg-[linear-gradient(180deg,rgba(255,255,255,0.9)_0%,rgba(255,190,192,0.0627)_100%)]"
               >
-                {/* Red Number Ribbon Badge */}
-                <div className="relative w-13 h-13 sm:w-16 sm:h-16 rounded-[18px] bg-[#D31820] text-white flex items-center justify-center shrink-0 shadow-lg shadow-red-600/25 group-hover:scale-105 transition-transform">
+                {/* Red Number Ribbon Badge (Absolute) */}
+                <div className="sm:absolute relative sm:-top-2 sm:left-5 w-14 h-14 sm:w-[60px] sm:h-[60px] bg-[#D31820] text-white flex items-center justify-center shadow-lg shadow-red-600/25 group-hover:scale-105 transition-transform rounded-tl-[16px] rounded-br-[16px] rounded-bl-[16px] rounded-tr-none -mt-7 sm:mt-0 mb-3 sm:mb-0">
+                  {/* Ribbon Fold (Top-Right) */}
+                  <div className="hidden sm:block absolute top-0 -right-2 w-0 h-0 border-b-[8px] border-b-[#900F15] border-r-[8px] border-r-transparent" />
+
                   <span className="text-xl sm:text-2xl font-black leading-none tracking-tight">
                     {step.num}
                   </span>
-                  {/* Subtle decorative curved corner accent */}
-                  <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-red-400/40 rounded-full blur-[1px]" />
                 </div>
 
                 {/* Step Details */}
-                <div className="space-y-0.5 sm:space-y-1">
-                  <h3 className="text-base sm:text-[17px] font-bold text-gray-900 leading-snug">
+                <div className="flex flex-col gap-[6px]">
+                  <h3 className="text-base sm:text-lg font-bold text-gray-900 leading-snug">
                     {step.title}
                   </h3>
-                  <p className="text-xs sm:text-[13.5px] text-gray-500 leading-relaxed font-normal">
+                  <p className="text-xs sm:text-[14px] text-gray-500 leading-relaxed font-normal">
                     {step.desc}
                   </p>
                 </div>

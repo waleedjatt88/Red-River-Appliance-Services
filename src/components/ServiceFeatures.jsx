@@ -30,7 +30,7 @@ export default function ServiceFeatures() {
   ];
 
   return (
-    <section className="relative w-full bg-gradient-to-b from-white via-[#fffafa] to-white py-20 lg:py-28 overflow-hidden select-none">
+    <section className="relative w-full bg-gradient-to-b from-white via-[#fffafa] to-white pt-8 pb-20 lg:pt-12 lg:pb-28 overflow-hidden select-none">
       
       {/* Soft Pink Background Glow on Top Right */}
       <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-[rgba(211,24,32,0.08)] rounded-full blur-3xl pointer-events-none -z-10" />
@@ -66,20 +66,20 @@ export default function ServiceFeatures() {
             return (
               <div
                 key={item.id}
-                className="bg-white rounded-[26px] p-7 sm:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100/90 border-t-[3.5px] border-t-[#D31820] flex flex-col items-center text-center hover:shadow-[0_16px_40px_rgba(211,24,32,0.08)] hover:-translate-y-1.5 transition-all duration-300 group"
+                className="relative bg-white w-full max-w-[302px] mx-auto h-[250px] rounded-[20px] pt-10 px-6 pb-8 border border-[#E2E8F0] border-t-[3.5px] border-t-[#D31820] shadow-[0_8px_30px_rgba(0,0,0,0.04)] flex flex-col items-center text-center gap-5 hover:shadow-[0_16px_40px_rgba(211,24,32,0.08)] hover:-translate-y-1.5 transition-all duration-500 group overflow-hidden before:absolute before:top-0 before:left-0 before:w-full before:h-0 before:bg-[#D31820] before:transition-all before:duration-500 before:ease-out hover:before:h-full before:z-0"
               >
                 {/* Center Solid Red Circle Icon */}
-                <div className="w-14 h-14 rounded-full bg-[#D31820] flex items-center justify-center text-white shadow-md shadow-red-500/25 mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Icon className="w-6 h-6 text-white" />
+                <div className="relative z-10 w-14 h-14 rounded-full bg-[#D31820] group-hover:bg-white flex items-center justify-center text-white group-hover:text-[#D31820] shadow-md shadow-red-500/25 shrink-0 group-hover:scale-110 transition-all duration-500">
+                  <Icon className="w-6 h-6 text-current" />
                 </div>
 
                 {/* Card Title */}
-                <h3 className="text-lg font-bold text-gray-900 mb-2 leading-snug">
+                <h3 className="relative z-10 text-lg font-bold text-gray-900 group-hover:text-white leading-snug transition-colors duration-500">
                   {item.title}
                 </h3>
 
                 {/* Card Description */}
-                <p className="text-xs sm:text-[13px] text-gray-500 leading-relaxed">
+                <p className="relative z-10 text-xs sm:text-[13px] text-gray-500 group-hover:text-white/90 leading-relaxed transition-colors duration-500">
                   {item.desc}
                 </p>
               </div>

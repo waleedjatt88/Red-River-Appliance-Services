@@ -2,6 +2,7 @@ import React from 'react';
 import fixMachine from '../assets/fix machine.png';
 import fixCircut from '../assets/fix circut.png';
 import { Tag, ShieldCheck, Phone, ArrowRight, ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function AboutServices() {
   return (
@@ -19,7 +20,13 @@ export default function AboutServices() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Content & Benefits */}
-          <div className="lg:col-span-6 space-y-6 sm:space-y-7 max-w-xl">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="lg:col-span-6 space-y-6 sm:space-y-7 max-w-xl"
+          >
             
             {/* Top Small Badge */}
             <div className="inline-flex items-center gap-2 bg-white px-3.5 py-1.5 rounded-full border border-gray-200/80 shadow-[0_2px_10px_rgba(0,0,0,0.04)]">
@@ -89,16 +96,22 @@ export default function AboutServices() {
               </a>
             </div>
 
-          </div>
+          </motion.div>
 
           {/* Right Column: Layered Image Composition Matching Exact Figma 463x561 */}
-          <div className="lg:col-span-6 relative flex items-center justify-center lg:justify-end pr-4 sm:pr-8 py-6">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            className="lg:col-span-6 relative flex items-center justify-center lg:justify-end py-10 sm:py-6 w-full"
+          >
             
             {/* Wrapper Container with exact Figma width: 463px */}
-            <div className="relative w-full max-w-[463px]">
+            <div className="relative w-[90%] sm:w-full max-w-[463px] mx-auto lg:mx-0">
               
               {/* 1. Main Primary Photo Card (Exact Figma: 463px x 561px, Radius 32px, Border 4px #FFFFFF) */}
-              <div className="w-full max-w-[463px] h-[480px] sm:h-[561px] rounded-[32px] border-[4px] border-white overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] bg-white">
+              <div className="w-full max-w-[463px] h-[380px] sm:h-[561px] rounded-[24px] sm:rounded-[32px] border-[4px] border-white overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] bg-white">
                 <img 
                   src={fixMachine} 
                   alt="Appliance Repair Technician" 
@@ -107,8 +120,8 @@ export default function AboutServices() {
               </div>
 
               {/* 2. Red Serrated Starburst Badge (10+ YEARS OF EXPERIENCE - Top Right) */}
-              <div className="absolute -top-5 -right-5 sm:-top-6 sm:-right-7 z-30 pointer-events-none">
-                <div className="relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center drop-shadow-[0_10px_25px_rgba(211,24,32,0.4)]">
+              <div className="absolute -top-4 -right-3 sm:-top-6 sm:-right-7 z-30 pointer-events-none">
+                <div className="relative w-20 h-20 sm:w-28 sm:h-28 flex items-center justify-center drop-shadow-[0_10px_25px_rgba(211,24,32,0.4)]">
                   <svg 
                     className="absolute inset-0 w-full h-full text-[#D31820]" 
                     viewBox="0 0 100 100"
@@ -119,8 +132,8 @@ export default function AboutServices() {
                     />
                   </svg>
                   <div className="relative z-10 flex flex-col items-center justify-center text-center text-white">
-                    <span className="text-2xl sm:text-3xl font-black leading-none tracking-tight">10+</span>
-                    <span className="text-[7.5px] sm:text-[8.5px] font-black uppercase tracking-wider leading-tight mt-0.5">
+                    <span className="text-xl sm:text-3xl font-black leading-none tracking-tight">10+</span>
+                    <span className="text-[6.5px] sm:text-[8.5px] font-black uppercase tracking-wider leading-tight mt-0.5">
                       YEARS OF<br />EXPERIENCE
                     </span>
                   </div>
@@ -128,7 +141,7 @@ export default function AboutServices() {
               </div>
 
               {/* 3. Secondary Overlaid Photo Card (Circuit Board - Bottom Right) */}
-              <div className="absolute -bottom-8 -right-6 sm:-bottom-10 sm:-right-10 z-20 w-48 sm:w-56 lg:w-60 h-56 sm:h-64 rounded-[28px] overflow-hidden shadow-[0_20px_45px_rgba(0,0,0,0.18)] border-[6px] sm:border-[8px] border-white bg-white">
+              <div className="absolute -bottom-6 -right-2 sm:-bottom-10 sm:-right-10 z-20 w-36 sm:w-56 lg:w-60 h-40 sm:h-64 rounded-[20px] sm:rounded-[28px] overflow-hidden shadow-[0_20px_45px_rgba(0,0,0,0.18)] border-[5px] sm:border-[8px] border-white bg-white">
                 <img 
                   src={fixCircut} 
                   alt="Circuit Board Electronic Repair" 
@@ -137,18 +150,18 @@ export default function AboutServices() {
               </div>
 
               {/* 4. Floating Contact Pill Card (Bottom Left) */}
-              <div className="absolute -bottom-6 -left-6 sm:-bottom-8 sm:-left-8 z-30 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-3.5 px-4 shadow-[0_15px_35px_rgba(0,0,0,0.1)] border border-gray-100 flex items-center gap-3">
-                <div className="w-11 h-11 rounded-full bg-[#D31820] flex items-center justify-center text-white shadow-lg shadow-red-500/30 shrink-0">
-                  <Phone className="w-4 h-4 fill-white" />
+              <div className="absolute -bottom-4 -left-3 sm:-bottom-8 sm:-left-8 z-30 bg-white/95 backdrop-blur-md rounded-xl sm:rounded-2xl p-2.5 px-3 sm:p-3.5 sm:px-4 shadow-[0_15px_35px_rgba(0,0,0,0.1)] border border-gray-100 flex items-center gap-2.5 sm:gap-3">
+                <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#D31820] flex items-center justify-center text-white shadow-lg shadow-red-500/30 shrink-0">
+                  <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-white" />
                 </div>
                 <div className="text-left">
-                  <span className="block text-[9px] font-extrabold uppercase tracking-wider text-gray-400 leading-none">
+                  <span className="block text-[8px] sm:text-[9px] font-extrabold uppercase tracking-wider text-gray-400 leading-none">
                     NEED HELP FAST?
                   </span>
-                  <span className="block text-sm sm:text-base font-black text-gray-900 leading-tight mt-1">
+                  <span className="block text-xs sm:text-base font-black text-gray-900 leading-tight mt-1">
                     (204) 500-2474
                   </span>
-                  <span className="block text-[9.5px] font-semibold text-[#D31820] leading-none mt-0.5">
+                  <span className="block text-[8px] sm:text-[9.5px] font-semibold text-[#D31820] leading-none mt-0.5">
                     We're here to help, anytime.
                   </span>
                 </div>
@@ -156,7 +169,7 @@ export default function AboutServices() {
 
             </div>
 
-          </div>
+          </motion.div>
 
         </div>
       </div>
